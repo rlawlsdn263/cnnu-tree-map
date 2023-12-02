@@ -23,6 +23,7 @@ const useURLQuery = () => {
         lat: lat,
         lng: lng,
       });
+      console.log(lat, lng);
     } else {
       console.log('No Query Found');
     }
