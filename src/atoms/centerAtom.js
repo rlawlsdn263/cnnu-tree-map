@@ -1,10 +1,10 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 const centerAtom = atom({
-  key: 'centerAtom',
+  key: "centerAtom",
   default: {
-    lat: 35.1749,
-    lng: 126.9013,
+    lat: 35.1769,
+    lng: 126.9069,
   },
 });
 

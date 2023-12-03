@@ -31,7 +31,7 @@ const TreeMarker = ({
         }}
         clickable={true}
         onClick={() => {
-          setCenter({ lat: position.lat, lng: position.lng });
+          setCenter({ lat: position.lat + 0.003, lng: position.lng });
           setActiveModalIndex(isActive ? null : index);
         }}
       ></MapMarker>
