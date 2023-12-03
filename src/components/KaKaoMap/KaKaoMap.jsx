@@ -1,4 +1,5 @@
 import { useKakaoLoader, Map } from "react-kakao-maps-sdk";
+
 import { TreeMarker } from "../_index";
 import { trees } from "../../constants/_index";
 import { useRecoilValue } from "recoil";
@@ -19,14 +20,17 @@ const KaKaoMap = () => {
         center={center}
         isPanto={false}
         style={{ width: "100%", height: "100%", borderRadius: "4px" }}
-        level={3}
+        level={4}
       >
         {/* 나무마커 생성 */}
         {trees.map((tree, index) => (
           <TreeMarker
             key={tree.title}
             title={tree.title}
+            content={tree.content}
+            relation={tree.relation}
             position={tree.latlng}
+            images={tree.images}
             index={index}
             isActive={activeModalIndex === index}
             setActiveModalIndex={setActiveModalIndex}
