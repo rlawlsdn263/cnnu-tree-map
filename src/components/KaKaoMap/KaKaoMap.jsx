@@ -1,11 +1,10 @@
-import { useKakaoLoader, Map } from 'react-kakao-maps-sdk';
-import styles from './KaKaoMap.module.css';
-import { TreeMarker } from '../_index';
-import { trees } from '../../constants/_index';
-import { useRecoilValue } from 'recoil';
-import { default as centerAtom } from '../../atoms/centerAtom';
-import { useState } from 'react';
-import useURLQuery from '../../hooks/useURLQuery';
+import { useKakaoLoader, Map } from "react-kakao-maps-sdk";
+import { TreeMarker } from "../_index";
+import { trees } from "../../constants/_index";
+import { useRecoilValue } from "recoil";
+import { default as centerAtom } from "../../atoms/centerAtom";
+import { useState } from "react";
+import useURLQuery from "../../hooks/useURLQuery";
 
 const KaKaoMap = () => {
   useKakaoLoader();
@@ -15,11 +14,11 @@ const KaKaoMap = () => {
   useURLQuery();
 
   return (
-    <div className={styles.KaKaoMap}>
+    <div className="h-[500px] w-[500px] rounded-md border-[2px] border-black p-[4px] sm:w-[1000px]">
       <Map
         center={center}
         isPanto={false}
-        style={{ width: '100%', height: '100%' }}
+        style={{ width: "100%", height: "100%", borderRadius: "4px" }}
         level={3}
       >
         {/* 나무마커 생성 */}
@@ -27,7 +26,7 @@ const KaKaoMap = () => {
           <TreeMarker
             key={tree.title}
             title={tree.title}
-            position={tree.latlng} // 마커를 표시할 위치
+            position={tree.latlng}
             index={index}
             isActive={activeModalIndex === index}
             setActiveModalIndex={setActiveModalIndex}
